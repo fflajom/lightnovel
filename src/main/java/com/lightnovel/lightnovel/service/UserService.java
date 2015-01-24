@@ -2,10 +2,10 @@ package com.lightnovel.lightnovel.service;
 
 import java.util.List;
 
-import com.lightnovel.lightnovel.data.model.User;
+import com.lightnovel.lightnovel.service.model.UserDTO;
 
 public interface UserService {
 
-		List<User> findAll();
-		boolean save(User user);
+		List<UserDTO> findAll();
+		boolean save(UserDTO user);
 }

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.lightnovel.lightnovel.data.UserDao;
 import com.lightnovel.lightnovel.service.ReaderService;
 import com.lightnovel.lightnovel.service.model.ReaderDTO;
+import com.lightnovel.lightnovel.util.DozerHelper;
 
 @Service("ReaderService")
 @Transactional
@@ -16,8 +17,11 @@ public class ReaderServiceImpl implements ReaderService{
 	@Autowired
 	UserDao dao;
 	
+	@Autowired
+	private DozerHelper mapper;
+	
 	public ReaderDTO getReader(Long id) {
-		return new ReaderDTO(dao.find(id));
+		return mapper.map(dao.find(id), ReaderDTO.class);
 	}
 
 }

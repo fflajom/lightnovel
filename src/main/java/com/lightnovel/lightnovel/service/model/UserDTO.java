@@ -2,8 +2,6 @@ package com.lightnovel.lightnovel.service.model;
 
 import java.util.Date;
 
-import com.lightnovel.lightnovel.data.model.User;
-
 public class UserDTO {
 	
 	private String username;
@@ -13,24 +11,7 @@ public class UserDTO {
 	private Date birthdate;
 	private boolean isPremium;
 	private String type;
-	//create age getter
-	
-	public UserDTO(User user){
-		this.username = user.getUsername();
-		this.fname = user.getFname();
-		this.mname = user.getMname();
-		this.lname = user.getLname();
-		this.birthdate = user.getBirthdate();
-		this.isPremium = user.isPremium();
-		this.type = user.getType();
-	}
-	
-	public String getType() {
-		return type;
-	}
-	public void setType(String type) {
-		this.type = type;
-	}
+
 	public String getUsername() {
 		return username;
 	}
@@ -67,4 +48,11 @@ public class UserDTO {
 	public void setPremium(boolean isPremium) {
 		this.isPremium = isPremium;
 	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+
 }
