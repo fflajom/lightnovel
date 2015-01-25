@@ -20,7 +20,7 @@
    </property>
 
    <!-- List of XML mapping files -->
-   <mapping class="com.sample.model.User"/>
+   <mapping class="com.lightnovel.lightnovel.data.model.User"/>
 
 </session-factory>
 </hibernate-configuration>

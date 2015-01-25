@@ -1,10 +1,10 @@
 com/lightnovel/lightnovel/service/ReaderService.class
 com/lightnovel/lightnovel/service/impl/ReaderServiceImpl.class
-com/lightnovel/lightnovel/data/UserDao.class
 com/lightnovel/lightnovel/service/UserService.class
 com/lightnovel/lightnovel/data/impl/UserDaoImpl.class
-com/lightnovel/lightnovel/data/model/User.class
 com/lightnovel/lightnovel/service/impl/UserServiceImpl.class
-com/lightnovel/lightnovel/data/model/BaseModel.class
 com/lightnovel/lightnovel/service/model/ReaderDTO.class
 com/lightnovel/lightnovel/service/model/UserDTO.class
+com/lightnovel/lightnovel/data/UserDao.class
+com/lightnovel/lightnovel/data/model/User.class
+com/lightnovel/lightnovel/data/model/BaseModel.class

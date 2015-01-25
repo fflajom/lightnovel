@@ -1,6 +1,7 @@
 /Users/dev_env/GitHub/lightnovel/src/main/java/com/lightnovel/lightnovel/service/ReaderService.java
 /Users/dev_env/GitHub/lightnovel/src/main/java/com/lightnovel/lightnovel/data/UserDao.java
 /Users/dev_env/GitHub/lightnovel/src/main/java/com/lightnovel/lightnovel/service/impl/UserServiceImpl.java
+/Users/dev_env/GitHub/lightnovel/src/main/java/com/lightnovel/lightnovel/util/DozerHelper.java
 /Users/dev_env/GitHub/lightnovel/src/main/java/com/lightnovel/lightnovel/data/model/User.java
 /Users/dev_env/GitHub/lightnovel/src/main/java/com/lightnovel/lightnovel/service/UserService.java
 /Users/dev_env/GitHub/lightnovel/src/main/java/com/lightnovel/lightnovel/data/model/BaseModel.java
