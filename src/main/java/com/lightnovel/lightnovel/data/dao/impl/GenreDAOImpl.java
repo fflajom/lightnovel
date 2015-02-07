@@ -1,15 +1,15 @@
-package com.lightnovel.lightnovel.data.impl;
+package com.lightnovel.lightnovel.data.dao.impl;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.googlecode.genericdao.dao.hibernate.GenericDAOImpl;
-import com.lightnovel.lightnovel.data.UserDao;
-import com.lightnovel.lightnovel.data.model.User;
+import com.lightnovel.lightnovel.data.dao.GenreDAO;
+import com.lightnovel.lightnovel.data.model.Genre;
 
-@Repository("UserDao")
-public class UserDaoImpl extends GenericDAOImpl<User, Long> implements UserDao{
+@Repository("GenreDAO")
+public class GenreDAOImpl extends GenericDAOImpl<Genre, Long> implements GenreDAO {
 
     @Autowired
     @Override

@@ -18,9 +18,16 @@
    <property name="hibernate.connection.username">
       root
    </property>
+   <property name="hibernate.connection.password">
+      root
+   </property>
 
    <!-- List of XML mapping files -->
-   <mapping class="com.lightnovel.lightnovel.data.model.User"/>
+   <mapping class="com.lightnovel.lightnovel.data.model.User" />
+   <mapping class="com.lightnovel.lightnovel.data.model.Book" />
+   <mapping class="com.lightnovel.lightnovel.data.model.Chapter" />
+   <mapping class="com.lightnovel.lightnovel.data.model.Genre" />
+   <mapping class="com.lightnovel.lightnovel.data.model.Tag" />
 
 </session-factory>
 </hibernate-configuration>

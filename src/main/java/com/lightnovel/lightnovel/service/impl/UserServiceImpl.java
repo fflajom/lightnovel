@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.lightnovel.lightnovel.data.UserDao;
+import com.lightnovel.lightnovel.data.dao.UserDAO;
 import com.lightnovel.lightnovel.data.model.User;
 import com.lightnovel.lightnovel.service.UserService;
 import com.lightnovel.lightnovel.service.model.UserDTO;
@@ -17,17 +17,17 @@ import com.lightnovel.lightnovel.util.DozerHelper;
 public class UserServiceImpl implements UserService{
 
 	@Autowired
-	private UserDao dao;
+	private UserDAO dao;
 	
 	@Autowired
 	private DozerHelper mapper;
 	
 	
-	public UserDao getDao() {
+	public UserDAO getDao() {
 		return dao;
 	}
 
-	public void setDao(UserDao dao) {
+	public void setDao(UserDAO dao) {
 		this.dao = dao;
 	}
 

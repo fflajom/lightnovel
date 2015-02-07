@@ -1,156 +1,148 @@
 package com.lightnovel.lightnovel.data.model;
 
-import java.util.ArrayList;
+import java.sql.Timestamp;
 import java.util.Date;
-import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.JoinTable;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="user")
+@Table(name="USER")
 public class User extends BaseModel {
 
 	private static final long serialVersionUID = 1L;
 
-	@Column(name="username", nullable=false, unique=true, length=45)
+	@Column(name="username", nullable=false, unique=true, length=20)
 	private String username;
 	
-	@Column(name="salted_password", nullable=false)
-	private String saltedPassword;
+	@Column(name="password", nullable=false, length=50)
+	private String password;
 	
-	@Column(name="salt", nullable=false)
+	@Column(name="salt", nullable=false, length=50)
 	private String salt;
 	
-	@Column(name="fname", nullable=false)
-	private String fname;
+	@Column(name="email", nullable=false, unique=true, length=254)
+	private String email;
 	
-	@Column(name="mname", nullable=false)
-	private String mname;
+	@Column(name="first_name", nullable=false, length=35)
+	private String firstName;
 	
-	@Column(name="lname", nullable=false)
-	private String lname;
+	@Column(name="middle_name", nullable=true, length=35)
+	private String middleName;
+	
+	@Column(name="last_name", nullable=false, length=35)
+	private String lastName;
 	
 	@Column(name="birthdate", nullable=false)
 	private Date birthdate;
 	
-	@Column(name="type", nullable=false)
-	private String type;
+	@Column(name="user_type", nullable=false, length=11)
+	private String userType;
 	
-	@Column(name="is_premium", nullable=false)
-	private boolean isPremium;
+	@Column(name="is_active", nullable=false)
+	private boolean isActive;
 	
-	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinTable(name = "Followers", joinColumns = { 
-			@JoinColumn(name = "Follower", nullable = false, updatable = false) }, 
-			inverseJoinColumns = { @JoinColumn(name = "User", 
-					nullable = false, updatable = false) })
-	public List<User> following = new ArrayList<User>();
+	@Column(name="premium_date", nullable=true)
+	private Timestamp premiumDate;
 	
-	@ManyToMany(fetch = FetchType.LAZY, mappedBy = "following")
-	private List<User> followers = new ArrayList<User>();
-	
+	@Column(name="registration_date", nullable=false)
+	private Timestamp registrationDate;
+
 	public String getUsername() {
 		return username;
 	}
+
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	public String getSaltedPassword() {
-		return saltedPassword;
+
+	public String getPassword() {
+		return password;
 	}
-	public void setSaltedPassword(String saltedPassword) {
-		this.saltedPassword = saltedPassword;
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
+
 	public String getSalt() {
 		return salt;
 	}
+
 	public void setSalt(String salt) {
 		this.salt = salt;
 	}
-	public String getFname() {
-		return fname;
+
+	public String getEmail() {
+		return email;
 	}
-	public void setFname(String fname) {
-		this.fname = fname;
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
-	public String getMname() {
-		return mname;
+
+	public String getFirstName() {
+		return firstName;
 	}
-	public void setMname(String mname) {
-		this.mname = mname;
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
-	public String getLname() {
-		return lname;
+
+	public String getMiddleName() {
+		return middleName;
 	}
-	public void setLname(String lname) {
-		this.lname = lname;
+
+	public void setMiddleName(String middleName) {
+		this.middleName = middleName;
 	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
 	public Date getBirthdate() {
 		return birthdate;
 	}
+
 	public void setBirthdate(Date birthdate) {
 		this.birthdate = birthdate;
 	}
-	public String getType() {
-		return type;
-	}
-	public void setType(String type) {
-		this.type = type;
-	}
-	public boolean isPremium() {
-		return isPremium;
-	}
-	public void setPremium(boolean isPremium) {
-		this.isPremium = isPremium;
-	}
-	public List<User> getFollowing() {
-		return following;
-	}
-	public void setFollowing(List<User> following) {
-		this.following = following;
-	}
-	public List<User> getFollowers() {
-		return followers;
-	}
-	public void setFollowers(List<User> followers) {
-		this.followers = followers;
-	}
-	@Override
-	public String toString() {
-		return "User [fname=" + fname + ", mname=" + mname + ", lname=" + lname
-				+ "]";
-	}
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		User other = (User) obj;
-		if (username == null) {
-			if (other.username != null)
-				return false;
-		} else if (!username.equals(other.username))
-			return false;
-		return true;
-	}
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result
-				+ ((username == null) ? 0 : username.hashCode());
-		return result;
+
+	public String getUserType() {
+		return userType;
 	}
 
+	public void setUserType(String userType) {
+		this.userType = userType;
+	}
+
+	public boolean isActive() {
+		return isActive;
+	}
+
+	public void setActive(boolean isActive) {
+		this.isActive = isActive;
+	}
+
+	public Date getPremiumDate() {
+		return premiumDate;
+	}
+
+	public void setPremiumDate(Timestamp premiumDate) {
+		this.premiumDate = premiumDate;
+	}
+
+	public Date getRegistrationDate() {
+		return registrationDate;
+	}
+
+	public void setRegistrationDate(Timestamp registrationDate) {
+		this.registrationDate = registrationDate;
+	}
 	
 }
